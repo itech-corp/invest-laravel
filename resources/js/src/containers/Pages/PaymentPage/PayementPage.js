@@ -31,6 +31,11 @@ class PayementPage extends Component {
             .catch(err => console.log(err));
     }
 
+    altSubmitHandler = e => {
+        e.preventDefault();
+        this.props.history.push('/simulator');
+    }
+
     inputChangeHandler = (e, name) => {
         this.setState({ [name]: e.target.value });
     }
@@ -41,7 +46,7 @@ class PayementPage extends Component {
         let processing = this.state.processPage
         console.log("link " + this.props.paymentLink)
         let payementProcess =
-            <Form action="/simulator">
+            <Form action="/simulator" onSubmit={e => this.altSubmitHandler(e)}>
                 <InputGroup size='lg outline-0'>
                     <InputGroupAddon addonType="prepend">
                         <InputGroupText style={{ border: '0' }} className="user-input bg-dark" >
