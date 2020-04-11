@@ -54,7 +54,7 @@ export const auth = (authData, isSignup) => dispatch => {
         console.log("Guest Signup");
         console.log(authData)
         const form = new FormData(authData);
-        fetch('/invest-cal/api/guest/login', {
+        fetch('/invest-laravel/public/api/guest/login', {
             method: 'POST',
             mode: 'cors',
             body: form,

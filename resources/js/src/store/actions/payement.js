@@ -12,7 +12,7 @@ export const setPayementPage = (page)=> {
 export const getPayementPage =() => dispatch=> {
 
     
-    fetch('/invest-cal/api/plans/silver-plan/payment').then(response=>{
+    fetch('/invest-laravel/public/api/plans/silver-plan/payment').then(response=>{
         response.text();
     }).then(html=>{
         console.log(html);
